@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Corretores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- FORMULÁRIO DE CADASTRO -->
+<div class="form-container">
+    <h2>Cadastro do Corretor</h2>
+    <form id="form-cadastro" action="validarDdos.php" method="POST">
+        <div class="form-group">
+            <input type="text" id="cpf" name="cpf" placeholder="Digite o seu CPF" pattern="\d{11}" required>
+            <input type="text" id="creci" name="creci" placeholder="Digite o seu Creci" minlength="2" required>
+        </div>
+            
+        <div class="form-group">
+            <input type="text" id="nome" name="nome" placeholder="Digite o seu nome" minlength="2" required>
+        </div>
+            
+        <button type="button" id="botao-cadastro" onclick="cadastrar()">Enviar</button>
+    </form>
+</div>
+    
+<!-- TABELA CORRETORES -->
+<div class="tabela-container">
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Creci</th>
+                <th>     </th>
+            </tr>
+        </thead>
+        <tbody> 
+        </tbody>
+    </table>
+</div>
+
+<!-- MODAL-->
+<div id="modal-editar" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <h2>Editar Corretor</h2>
+        <form id="form-editar">
+            <div class="form-group">
+                <input type="text" id="cpf-editar" placeholder="Digite o CPF" required>
+                <input type="text" id="creci-editar" placeholder="Digite o Creci" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="nome-editar" placeholder="Digite o nome do corretor" required>
+            </div>
+            <button type="button"id="botao-salvar" onclick="salvarEdicao()">Salvar</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
