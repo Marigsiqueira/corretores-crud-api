@@ -172,8 +172,7 @@ h2{
 }
 
 #modal-editar {
-    display: none; /* Esconde o modal por padrão */
-    /* Outros estilos do modal */
+    display: none;
 }
 
 
